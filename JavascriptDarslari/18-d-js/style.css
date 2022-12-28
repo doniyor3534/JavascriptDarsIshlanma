@@ -1,13 +1,33 @@
-button{
-   padding: 7px 25px;
-   background-color: grey;
-   color: white;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-body{
-    text-align: center;
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
-
-.lampa img{
-   width: 100px;
-   height: 200px;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+input{
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid rgb(37, 161, 249);
+    outline: none;
+}
+.submit{
+    padding: 10px 20px;
+}
+table,tr,td,th{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
 }

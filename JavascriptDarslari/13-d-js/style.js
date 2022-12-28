@@ -1,114 +1,69 @@
-// <!-- Javascriptda Amallar bajarish  * / - + % -- ++ = == === !== != || &&  -->
-// let a = 10;
-// let b = 10;
-// let s = a * b
-// console.log(s);
-
-// let a = 10;
-// let b = 10;
-// let s = a - b
-// console.log(s);
-
-// let a = 25;
-// let b = 12;
-// let s = a % b
-// console.log(s);
-
-// let a = 25;
-// let b = 12;
-//    a ++
-//    b--
-//    a--
-// console.log(a,b);
-
-// let a = 25;
-// let b = '25';
-// console.log(a == b);
-// let a = 25;
-// let b = '25';
-// console.log(a !== b);
-
-
-let a = 25;
-let b = '25';
-let d = '26';
-// console.log(a <= b || a > b || a <= d );
-console.log(a <= b && a <= b && a <= d );
 
 
 
 
 
-// let con = confirm("Sayt yoqtimi")
+// let count = document.querySelector('.count');
+// let input = document.querySelector('.input');
+// let input2 = document.querySelector('.input2');
+// let plus = document.querySelector('.plus');
+// let minus = document.querySelector('.minus');
+// let result = document.querySelector('.result');
 
-// console.log(con);
-// let son1 =  +prompt('Son1 kiriting')
-// let son2 =  +prompt('Son2 kiriting')
-// console.log(son1*son2);
+// let a = null;
+// let b = null;
+// let amal = '';
+// let hisob = 0
+// count.innerHTML = hisob
 
-// for sicl operatori//////////////////////////////////
-// for(i=0;i<=100;i++){
-//     console.log(i);
-// }
+// input.addEventListener('keyup', (e) => {
+//     console.log(e.target.value);
+//     a = e.target.value
+// })
+// input2.addEventListener('keyup', (e) => {
+//     console.log(e.target.value);
+//     b = e.target.value
+// });
+// plus.addEventListener('click', () => {
+//     hisob = Number(a) + Number(b)
+// });
+// minus.addEventListener('click', () => {
+//     hisob = Number(a) - Number(b)
+// });
 
-
-// while sicl operatori///////////////////////////
-
-// let i = 0
-
-// do{
-//     console.log(i)
-//     i++
-// }while(i < 100)
-
-
-///////////////////////////////////////////////////
-
-// let i = 0
-
-// while(i < 20){
-//     i++
-//     console.log(i);
-// }
-
-// let ism ='feruza'
-// let massiv = [1,'sks',true,{ism:ism,familyasi:'dhdshdhdh'}]
-
-// console.log(massiv[3].familyasi);
-
-let x = 11
-let y = '11'
-// let s = x * y
-// let s = x / y
-// let s = x + y
-// let s = x - y
-// let s = x % y
-// x++
-// x--
-// x++
-//  let s = x===y 
-//  let s = x==y 
-//  let s = x!==y 
-//   x+=10
-//   x-=5
-// alert('ismim ' + prompt('ismingiz '))
-// alert(prompt(''))
-// let ismmm = +prompt()
-// let ismmm = prompt()
-// console.log(ismmm===1111);
-// let qiymat = 10
-// let d = prompt()
-
-// console.log(qiymat * d);
+// result.addEventListener('click', () => {
+//     count.textContent = hisob
+// })
 
 
 
-// let a = 10    
-// let b = 12
-// let c = 30
+
+// let calCount = document.querySelector('.calCount')
+// let amalCount = document.querySelector('.amal')
+// let btns = document.querySelectorAll('.btn')
+
+// amalCount.innerHTML = ''
+// calCount.innerHTML = ''
 
 
-
-// console.log( a > 9 || b >9 || c < 9  );
-// console.log( a && b && c );
-
+// btns.forEach((e)=>{
+//     e.addEventListener('click',()=>{
+//         console.log(calCount.innerHTML);
+//         if(e.textContent / 2 >= 0){
+//             calCount.innerHTML += e.textContent
+//         }
+//         else if(e.textContent ==='ac'){
+//             calCount.innerHTML = ''
+//         }
+//         else if(e.textContent === '+'){
+//             a = calCount.innerHTML;
+//             amalCount.innerHTML = '+';
+//             calCount.innerHTML = '';
+//         }
+//         else if(e.textContent === '-'){
+//             a = calCount.innerHTML;
+//             amalCount.innerHTML = '-';
+//             calCount.innerHTML = '';
+//         }
+//     })
+// })

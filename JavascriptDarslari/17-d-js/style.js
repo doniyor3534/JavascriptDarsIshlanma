@@ -1,121 +1,79 @@
-// let h1 = document.querySelectorAll('.h1')
+let form = document.querySelector('#form')
+let ism = document.querySelector('#ism')
+let fam = document.querySelector('#fam')
+let tbody = document.querySelector('tbody')
+let data = [{ id: '1', ism: 'fv', fam: 'vdvd' }]
+let input = {
+    id: '',
+    ism: '',
+    fam: ''
+}
+let edit = false
 
 
-// h1.innerHTML = 'dhdhdhdhh'
-// h1.forEach((e)=>{
-//     e.innerHTML = `<button>BTN</button>`
-// })
+ism.addEventListener('keyup', (e) => {
+    input.ism = e.target.value
+    console.log(input);
+})
+fam.addEventListener('keyup', (e) => {
+    input.fam = e.target.value
+    console.log(input);
+})
 
-// console.log(h1);
-
-
-
-// function G_25 (a,b){
-//      return a + b
-// }
-
-// console.log(G_25(10,20));
-
-// function turlari  ///////////////////////
-// function ddd(){        //oddiy function  
-
-// }
-// ddd()
-
-// const funcc =()=>{  //colback function   ,Arrow fanction , lineniviy function
-
-// }
-// funcc()
-
-
-// oddiy funksiyani turlari /////////////////////////////////////////////
-//  1  function decloration////////////////////////
-
-// ddd()
-// function ddd(){        
-//      console.log('function decloration');
-// }
-// ddd()
-
-// 2 function expression///////////////////////////
-// let func = function(){
-//     console.log('function expretion ishladi');
-// }
-// func()
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (edit) {
+        data = data.map(val=>val.id===input.id?input:val)
+        edit = false
+    }else{
+        input.id = new Date().getTime()
+        data.push(input)
+    }
+    tablefun()
+    ism.value = ''
+    fam.value = ''
+    input = {
+        id: '',
+        ism: '',
+        fam: ''
+    }
+})
 
 
+function tablefun() {
+    tbody.innerHTML = ''
+    data.forEach((val, i) => {
+        tbody.innerHTML += `
+        <tr>
+            <td>${val.id}</td>
+            <td>${val.ism}</td>
+            <td>${val.fam}</td>
+            <td><button  onclick="editfun(${i})" >edit</button></td>
+            <td><button  onclick="delet(${i})" >delet</button></td>
+        </tr>
+    `
+    })
+}
+tablefun()
 
-// Arrow function - Arrrow fankshin,colback fankshin  ,linenivi funksia//////
-// const ddd=(a,b)=>{
-//     console.log(`${a} va ${b}`);
-// }
-// ddd(10,20)
-
-// function decloration////////////////////////////
-
-// myFunction()
-// function myFunction (){
-//      return console.log('function ishladi');
-// }
-// myFunction()
-
-
-// function expression///////////////////////////
-// myfunction()
-// let myfunction= function(){
-//     console.log('function ishladi');
-// }
-
-// myfunction()
+function delet(i) {
+    data = data.filter((v) => v.id !== data[i].id)
+    tablefun()
+}
 
 
+function editfun(i) {
+    ism.value = data[i].ism
+    fam.value = data[i].fam
+    input = {
+        id: data[i].id,
+        ism: data[i].ism,
+        fam: data[i].fam
+    }
+    tablefun()
+    edit = true
+}
 
-
-// Return/////////////////////////
-
-
-// let fun = function (){
-//      'djdjdjjdd'
-// }
-// console.log(fun());
-
-
-// // ////////////////
-// let fun2=function (){
-//     return  'djdjdjjdd'
-//  }
-
-//  let massivlar = fun2()
-//  console.log(massivlar);
-// /////////////////////////////////////////////////
-
-// // functiondan kengroq foydalanish/////////////////////////////////////////////////
-
-// function Kattafunc(name, age) {
-//     alert(`my name is ${name}`)
-//     function menhaqimda() {
-//         let data = ['html', 'css', 'javascript']
-//         for (i = 0; i < data.length; i++) {
-//             alert(`men ${data[i]} ni bilaman`)
-//         }
-//     }
-//     menhaqimda()
-//     function checkAge(age) {
-//         if (age > 18) {
-//             alert(`Exactly data for learrning  IT yoshingiz ${age}`)
-//         } else if (age < 18) {
-//             alert(`super data for learrning  IT yoshingiz ${age}`)
-//         }
-//     }
-//     checkAge(age)
-   
-//     function calcPow(number) {
-//         return number * number
-//     }
-//     console.log(calcPow(age));
-
-// }
-// Kattafunc('Doniyorbek', 25)
 
 
 

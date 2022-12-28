@@ -1,124 +1,56 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
 }
 .container{
-    max-width: 1920px;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to top left ,black,grey);
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.cardImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    overflow-y: hidden;
+    height: 100%;
+    display: flex;
+    transition: all 0.3s linear ;
+}
+.CaruselImg{
+    width: 1000px;
+    height: 600px;
+    object-fit: cover;
 }
 
-.logo{
-    color: antiquewhite ;
-}
-.navbar{
-    width: 100%;
-    height: auto;
-    background:radial-gradient(grey,black) ;
-    padding: 20px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.navleft{
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.navbar ul{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-.navbar ul li a{
-    color: white;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 20px;
-}
-.navbar .form{
-    display: flex;
-    align-items: center;
-}
-.inputGroup{
-    border: 1px solid grey;
-    background-color: rgba(230, 227, 227, 0.525);
-    border-radius: 10px;
-}
-.inputGroup input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 10px;
-    color: white;
-}
-.inputGroup .searchBtn{
-    height: 100%;
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    border-left: 1px solid black;
-}
-.menu{
+.next{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    padding: 10px 20px;
+    border-radius: 7px;
     background-color: grey;
     color: white;
-    font-size: 25px;
-    border: 1px solid rgb(8, 228, 85);
-    padding: 7px 15px;
+    cursor: pointer;
+}
+.prev{
+    position: absolute;
+    top: 50%;
+     left  : 20%;
+    padding: 10px 20px;
     border-radius: 7px;
-    display: none;
-    z-index: 55;
-}
-.menu:hover{
-    background-color: rgb(15, 5, 5);
-    color: rgb(253, 214, 214);
-}
-
-
-
-
-
-@media (max-width:420px){
-   .menu{
-    display: inline-block;
-   }
-   .navbar ul{
-    flex-direction: column;
-    gap: 10px;
-}
-.navleft{
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: -300px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(137, 43, 226, 0.373);
-    padding: 20px 0;
-    transition: all 0.5s linear;
-    z-index: 2;
-}
-.navleft.active{
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(137, 43, 226, 0.373);
-    padding: 20px 0;
-}
-
-
+    background-color: grey;
+    color: white;
+    cursor: pointer;
 }

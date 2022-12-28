@@ -1,51 +1,49 @@
 
+let btn =document.querySelectorAll('.btn')
+let tabcard =document.querySelectorAll('.tabcard')
 
-let array =['a','b','c']
-let d = [
-    {id:1,yosh:4},
-    {id:3,yosh:4},
-    {id:10,yosh:3},
-    {id:15,yosh:1}
+function tabfun(i){
+    tabcard.forEach((val,i)=>{
+        val.style.display = 'none'
+    })
+    tabcard[i].style.display = 'block'
+}
+
+function btnfun(){
+    tabfun(0)
+    btn.forEach((val,i)=>{
+        val.addEventListener('click',()=>{
+            tabfun(i)
+            val.classList.add('active')
+            btn.forEach((s,x)=>{
+                if(x!==i){
+                    s.classList.remove('active')
+                }
+            })
+        })
+    })
+}
+btnfun()
+
+
+
+
+
+
+
+
+let data = [
+    {id:1,name:'aaa',count:1,savat:false,narx:1000},
+    {id:2,name:'bbb',count:1,savat:false,narx:2000},
+    {id:3,name:'ddd',count:2,savat:false,narx:2500},
+    {id:4,name:'ccc',count:1,savat:false,narx:900},
 ]
 
-// console.log(array.concat());
-// console.log(array.pop());
-// console.log(array.push());
-// console.log(array.shift());
-// console.log(array.unshift());
-// console.log(array.splice());
-// console.log(array.forEach());
-// console.log(array.map());
-// console.log(array.find());
-// console.log(array.reduce());
-
-// let a =
-// array.concat  = 'dhdhdh'
-// array.concat = ['d','f']
-
-// array.unshift('hshs')
-// array.shift()
-
-// array.push('nn')
-// array.pop()
-
-// array.splice(0,3,'rrrr','ffff')
-// array.forEach((e)=>{
-//     console.log(e);
-// })
-
-// array.map((e)=>{
-//     console.log(e==='a');
-// })
+//  data = data.map(val => val.id===1?{...val,savat:true}:val)
+//  data = data.map(val => val.id===2?{...val,count:val.count +1} :val)
+// let result = data.filter(val => val.savat===true)
+let result = data.reduce((a,b )=>a+(b.count*b.narx),0 )
+console.log(result);
 
 
-// let c = array.find(()=>{
-     
-// })
 
-
-// let arr = [1,2,34,4555,666]
-// let s = arr.reduce((a,b)=>{
-//     return a + b
-// },0)
-// console.log(s);

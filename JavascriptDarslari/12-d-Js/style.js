@@ -1,92 +1,51 @@
-// let 
-// var
-// const 
- 
-// let nom1 = 10;
-// nom1 = 20
-// console.log(nom1);
-
-// const d = 10
-// d = 20
-// console.log(d);
 
 
+let array =['a','b','c']
+let d = [
+    {id:1,yosh:4},
+    {id:3,yosh:4},
+    {id:10,yosh:3},
+    {id:15,yosh:1}
+]
 
-// var yoshi1 ='uzgaruvchi var'  //eskirgan uzgaruvchi
-// let  yoshi2 ='uzgaruvchi let'
-// const yoshi3 ='uzgarmas'
+// console.log(array.concat());
+// console.log(array.pop());
+// console.log(array.push());
+// console.log(array.shift());
+// console.log(array.unshift());
+// console.log(array.splice());
+// console.log(array.forEach());
+// console.log(array.map());
+// console.log(array.find());
+// console.log(array.reduce());
 
-// let x = 'djdjdj'  //uzgaruvchi  qiymat yar4atuvchi
-// const  y = 11     //uzgarmass   qiymat yar4atuvchi
+// let a =
+// array.concat  = 'dhdhdh'
+// array.concat = ['d','f']
 
-// let ButtonNavbar =11  //kembelkase Farmati
+// array.unshift('hshs')
+// array.shift()
 
+// array.push('nn')
+// array.pop()
 
+// array.splice(0,3,'rrrr','ffff')
+// array.forEach((e)=>{
+//     console.log(e);
+// })
 
-// // console.log(y);   //konsolga chiqarish 
-// // alert('sdjsdjs') //brauserga chiqarish uchun        
-
-
-
-// // object = {}    //abekt
-// let objecttttt = {ismi:'Feruza',familyasi:'fsfsfsf',dhdhdd:222,shsh:'kkk'}
-
-// // console.log(objecttttt);
-
-
-
-// // array = []   //massiv
- 
-// let massivv = [1,2,3,4,5]  //MASSIV index raqami o dan boshlanadi
-// let G25 = [
-//     {ismi:'Feruza',familyasi:'fsfsfsf',dhdhdd:222,shsh:'kkk'},
-//     {ismi:'Fotihjon',familyasi:'fsfsfsf',dhdhdd:222,shsh:'kkk'},
-//     {ismi:'Shamsiddin',familyasi:'fsfsfsf',dhdhdd:222,shsh:'kkk'},
-//     {ismi:'Muhammad',familyasi:'fsfsfsf',dhdhdd:222,shsh:'kkk'}
-// ]
-
-
-// // console.log(G25);
-// // console.log(massivv[4]);
-
-
-// //malumot turlari
-// //Datatype
-
-// Number   =1123232333  //type Number
-// String   ='shdshdh'   // typi matnli / string
-// boolean    =true ,false   //booleaniviy znacheniya
-// undefined = topilmadi    //
-// null      = malumot_bosh    
+// array.map((e)=>{
+//     console.log(e==='a');
+// })
 
 
-// let a = null
+// let c = array.find(()=>{
+     
+// })
 
 
-// // let a;
-// // let b = null
-
-// let d = null                    
-
-
-// console.log(typeof d )
-// let Doniyor = 'Doniyorbekwww'
-// let familyasi = 'Sobirjovov'
-// let obect = {ism:'Doniyor',familyasi:'Sobirjonov',yoshi:20}     //obekt deyiladi
-// const  obect1 = {}
-
-// let massiv = [
-//     {ism:'Doniyor1',familyasi:'Sobirjonov',yoshi:20},
-//     {ism:'Doniyor2',familyasi:'Sobirjonov',yoshi:20},
-//     {ism:'Doniyor3',familyasi:'Sobirjonov',yoshi:20}
-// ]        // masssiv deyiladi //array
-// const massiv1 = []
-// // console.log(`mini ismin ${Doniyor} familyam ${familyasi}`);
-// console.log(massiv[1]);
-
-
-// let title = 'mening saytim '
-// let btnim = document.querySelector('.btn')
-
-// btnim.innerHTML=`<h1>${title}</h1>`
-// console.log(title);
+// let arr = [1,2,34,4555,666]
+// let s = arr.reduce((a,b)=>{
+//     return a + b
+// },0)
+// console.log(s);

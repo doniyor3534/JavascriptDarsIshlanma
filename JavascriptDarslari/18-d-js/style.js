@@ -1,137 +1,88 @@
-// // forEach sicl oreator ////////////////////////////////////////
-
-// let card = document.querySelector('.card')
-// let data = ['aaaa','bbb','cccc','eee','fff']
-// function btnlar(){
-//     data.forEach((e)=>{
-//         card.innerHTML +=` <button>${e}</button>`
-//     })
-// }
-// btnlar()
-// for(i=0;i<data.length;i++){
-//     card.innerHTML +=` <button>${data[i]}</button>`
-// }
-
-// for ///////////
-
-// for (i=0;i<= 10;i++){
-//     console.log(i);
-// }
-
-// for of /////////
-// let items = [1,2,3,4,5,6,7,8,9]
-// for(let item of items){
-//     console.log(item);
-// }
-
-// for in ///////////////
-// let person = { a: 'aaaaa', b: 'bbbb', d: 'dddd' }
-// let arr2 = [ {a: 'aaaaa',},{ b: 'bbbb',} ,{d: 'dddd'} ]
-// let text = ''
-// let arr = [1, 2, 3, 4]
-// console.log(arr);
-// arr.foo = 'jsjsj'
-// arr.c = 5
-
-// for (let x of arr2) {
-//     console.log(x);
-// }
-// for (let x in arr2) {
-//     console.log(x);
-//     console.log(arr2[x]);
-// }
-// console.log(arr);
-
-// for (let x in person) {
-//     text += person[x]
-//     console.log(x + ' bu x');
-//     console.log(text + ' bu text');
-//     console.log(person[x] + ' bu personni x chisi');
-// }
-
-// foreach///////////////
-// let items = ['html','css','javascript',4,5,6,7,8,9]
-// items.forEach(function(i){
-//     console.log(i);
-// })
-
-// let h1lar = document.querySelector('.sarlavha')
-// let data = ['Ogabek','Fotihjon','Dovutxon','Shamsiddin']
-// data.forEach(function(i){
-//     console.log(i);
-//     h1lar.innerHTML+=`<h1>${i}</h1>`
-// })
-
-//map/////
-// let items = [{html:'html',gsgsg:'dhdhdh'},{css:'css',html:'dddd'},'javascript',4,5,6,7,8,9]
-// let nevMas = items.map(function(i){
-//     return  i.html
-// })
-// console.log(nevMas);
-
-// filter /////////
-// let items = [{html:'html',css:'dhdhdh'},{css:'css',html:'dddd'}]
-// items.filter(function(i){
-//     console.log(i.html);
-// })
-
-// let x = 10
-
-// function menifunctionim(){
-//     x = 100
-//     let x = 100
-//     console.log(x);
-// }
-// menifunctionim()
-
-// console.log(x);
-
-// let btn = document.querySelector('.btn')
-
-// btn.addEventListener('click',()=>{
-//     if(btn.className!== 'btn a'){
-//         btn.classList.add('a')
-//     }else{
-//         btn.classList.remove('a')
-//     }
-// })
-
-// let count = document.querySelector(".count");
-// let pilus = document.querySelector(".plus");
-// let minus = document.querySelector(".minus");
-// let nol = document.querySelector(".nol");
-
-// let countS = 0;
-// count.innerHTML = countS;
-// pilus.addEventListener("click", () => {
-//   countS = countS += 1;
-//   count.innerHTML = countS;
-// });
-// minus.addEventListener("click", () => {
-//   countS = countS -= 1;
-//   count.innerHTML = countS;
-// });
-// nol.addEventListener("click", () => {
-//   countS = 0;
-//   count.innerHTML = countS;
-// });
+let form = document.querySelector('#form')
+let ism = document.querySelector('#ism')
+let fam = document.querySelector('#fam')
+let tbody = document.querySelector('tbody')
+let data = JSON.parse(localStorage.getItem('data')) || []
 
 
+function dataFunction(){
+    data = JSON.parse(localStorage.getItem('data')) || []
+}
 
 
+let input = {
+    id: '',
+    ism: '',
+    fam: ''
+}
+let edit = false
 
 
-let lampa = document.querySelector(".lampa")
-let on = document.querySelector(".on")
-let off = document.querySelector(".off")
-
-off.addEventListener('click',()=>{
-  lampa.innerHTML = `<img src="../images (2).jfif" alt="" class="lampa">`
+ism.addEventListener('change', (e) => {
+    input.ism = e.target.value
+    console.log(input);
 })
-on.addEventListener('click',()=>{
-  lampa.innerHTML = `<img src="../images (3).jfif" alt="" class="lampa">`
+fam.addEventListener('change', (e) => {
+    input.fam = e.target.value
+    console.log(input);
 })
-lampa.addEventListener('click',()=>{
-  console.log('djhdjdj');
-    lampa.innerHTML = `<img src="../images (1).jfif" alt="" class="lampa">`
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (edit) {
+        data = data.map(val => val.id === input.id ? input : val)
+        localStorage.setItem('data', JSON.stringify(data))
+        dataFunction()
+        edit = false
+    } else {
+        input.id = new Date().getTime()
+        localStorage.setItem('data', JSON.stringify([...data, input]))
+        dataFunction()
+    }
+    tablefun()
+    ism.value = ''
+    fam.value = ''
+    input = {
+        id: '',
+        ism: '',
+        fam: ''
+    }
 })
+
+
+function tablefun() {
+    tbody.innerHTML = ''
+    data.forEach((val, i) => {
+        tbody.innerHTML += `
+        <tr>
+            <td>${val.id}</td>
+            <td>${val.ism}</td>
+            <td>${val.fam}</td>
+            <td><button  onclick="editfun(${i})" >edit</button></td>
+            <td><button  onclick="delet(${i})" >delet</button></td>
+        </tr>
+    `
+    })
+}
+tablefun()
+
+function delet(i) {
+    localStorage.setItem('data', JSON.stringify(data = data.filter((v) => v.id !== data[i].id)))
+    dataFunction()
+    tablefun()
+}
+function editfun(i) {
+    ism.value = data[i].ism
+    fam.value = data[i].fam
+    input = {
+        id: data[i].id,
+        ism: data[i].ism,
+        fam: data[i].fam
+    }
+    tablefun()
+    edit = true
+}
+
+
+
+

@@ -1,13 +1,10 @@
-.card{
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100px;
-    /* grid-template-columns: repeat(4,auto); */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
-.c{
-    background-color: green;
-    border: 1px solid white;
+.btn.active{
+    background-color: rgb(51, 125, 236);
+    color: white;
 }

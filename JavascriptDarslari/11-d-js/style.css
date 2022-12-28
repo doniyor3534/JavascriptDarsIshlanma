@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+.cards{
+    width: 40%;
+    min-height: 300px;
+    background-color: rgb(125, 123, 123);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+input{
+    padding: 10px;
+    margin: 10px;
+}
+button{
+    padding: 20px 40px;
+}
