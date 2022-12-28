@@ -1,0 +1,13 @@
+button{
+   padding: 7px 25px;
+   background-color: grey;
+   color: white;
+}
+body{
+    text-align: center;
+}
+
+.lampa img{
+   width: 100px;
+   height: 200px;
+}

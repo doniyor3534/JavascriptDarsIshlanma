@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  color: grey;
+}
+a:hover {
+  color: white;
+}
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* navbar */
+
+nav {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  background-color: rgb(43, 41, 41);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* section */
+.sec1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./bg.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.cardTitle {
+  width: min-content;
+  height: 200px;
+  padding: 15px;
+  background-color: transparent;
+  border: 5px solid yellow;
+  text-align: center;
+}
+.cardTitle h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 96px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: underline;
+}
+.cardTitle h3 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.Title {
+  width: 60%;
+  height: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}

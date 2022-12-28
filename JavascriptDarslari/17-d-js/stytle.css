@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none; 
+    text-decoration: none;
+}
+.h1{
+    color: rgb(15, 15, 21);
+    font-size: 5em;
+    text-align: center;
+}
+button{
+    padding: 7px 15px;
+    background-color: grey;
+    color: white;
+}
